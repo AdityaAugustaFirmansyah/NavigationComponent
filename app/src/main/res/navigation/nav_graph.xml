@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/start2">
+
+    <fragment
+        android:id="@+id/start2"
+        android:name="com.aditya.navigationcomponent.Start"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_start2_to_running"
+            app:destination="@id/running" />
+    </fragment>
+    <fragment
+        android:id="@+id/running"
+        android:name="com.aditya.navigationcomponent.Running"
+        android:label="fragment_running"
+        tools:layout="@layout/fragment_running" >
+        <action
+            android:id="@+id/action_running_to_end2"
+            app:destination="@id/end2"
+            app:popUpTo="@+id/start2" />
+    </fragment>
+    <fragment
+        android:id="@+id/end2"
+        android:name="com.aditya.navigationcomponent.end"
+        android:label="fragment_end"
+        tools:layout="@layout/fragment_end" >
+        <action
+            android:id="@+id/action_end2_to_start2"
+            app:destination="@id/start2" />
+    </fragment>
+</navigation>
